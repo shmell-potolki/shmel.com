@@ -809,3 +809,24 @@ footer {
         right: 20px;
     }
 }
+/* Проверьте z-index и позиционирование */
+.thankyou-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Занимает 100% ширины экрана мобильного */
+    height: 100vh; /* Занимает 100% высоты экрана */
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Гарантирует, что окно перекроет все элементы сайта */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.thankyou-modal.active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
